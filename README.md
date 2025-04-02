@@ -76,5 +76,29 @@ The current repository has been tested on the following machines:
 | Hardware                    | Outcome |
 |-----------------------------|---------|
 | M2 Max Macbook Pro (12 CPU) |    ✅   | 
-| M1 Mac Mini (8 CPU) |   ⚠️    | 
-| M1 Macbook Air (8 CPU) |    ⚠️     | 
+| M1 Mac Mini (8 CPU) |   🔄     | 
+| M1 Macbook Air (8 CPU) |    🔄      | 
+
+With the following library versions:
+
+| Library | Version |
+|---------|---------|
+| MPICH | 4.3.0 |
+| HDF5 | 1.14.6 |
+| NetCDF-C | 4.9.3 |
+| NetCDF-Fortran | 4.6.2 |
+| PnetCDF | 1.14.0 |
+| Zlib | 1.3.1|
+| LibPNG | 1.6.47 |
+| Jasper | 1.900.1|
+
+Keep in mind that although Jasper has much more recent releases (v4.x), API changes occurred after v2.0.33 that lead to compilation errors or unexpected behavior. For that reason, the Jasper compilation is hard-coded to version 1.900.1.
+
+Furthermore, build_libraries.sh builds PnetCDF and HDF5 in parallel, allowing for considerable speed-ups when writing WRF output. The scripts can be edited to not compile the PnetCDF library and drop parallel-writing functionality, but it is highly recommended for efficiency purposes. A series of tests were performed to ensure WRF was condfigured with PnetCDF as expected:
+
+| Parallel Writing | Writing Speed |
+|------------------|---------------|
+| io_form=2 (not parallel) | |
+| io_form=11 (parallel) | |
+
+
