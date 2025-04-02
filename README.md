@@ -15,7 +15,7 @@ Unfortunately, compiling WRF on ARM architecture is relatively complex compared 
 
 ## Features
 
-- **Modular Build Scripts:**
+- **Modular Build Scripts:**    
     Each script (check_gcc.sh, build_libraries.sh, build_wrf_wps.sh, build_geog.sh) is designed to run independently, giving you flexibility to run only the parts you need.
 - **Unified Pipeline:**
     The compile.sh script runs all build scripts sequentially and ensuring the entire process is automated (recommended).
