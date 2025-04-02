@@ -44,7 +44,7 @@ compile_wrf_arm/
 - **Comprehensive Environment Checks:**    
     The suite automatically verifies your build environment, ensuring the correct version of GCC/G++ is used, and that all necessary libraries are present.
 - **Automated Dependency Compilation:**    
-    Builds and installs required libraries (such as NetCDF, MPI, etc.) with robust logging and error checking.
+    Builds and installs required most up-to-date libraries (such as NetCDF, MPI, etc.) with robust logging and error checking.
 - **Automated WRF/WPS Build:**    
     Configures and compiles the WRF model and its WPS component with minimal manual intervention.
 - **Geography Data Integration:**    
