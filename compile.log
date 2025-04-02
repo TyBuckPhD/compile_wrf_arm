@@ -1,0 +1,104 @@
+------------------
+ ⏳ Starting WRF compilation pipeline
+------------------
+ 🔄 Running check_gcc.sh
+------------------
+ ⏳ Checking gcc version
+ 🔄 Current gcc found: /opt/homebrew/bin/gcc
+ 🔄 Final gcc symlink: /opt/homebrew/bin/gcc
+ 🔄 GCC main version: 14
+ ✅ Finished check_gcc script successfully.
+ ✅ Using gcc from: /opt/homebrew/bin/gcc
+------------------
+ 🔄 Running build_libraries.sh
+ ⏳ Setting Environment and Building WRF Libraries
+------------------
+ ⏳ Adding environment to /Users/tybuckingham/.zshrc
+ ⚠️  WRF environment block already exists in /Users/tybuckingham/.zshrc - skipping
+------------------
+Detected Versions:
+ ✅ MPICH             4.3.0
+ ✅ HDF5              1.14.6
+ ✅ NETCDF_C          4.9.3
+ ✅ NETCDF_FORTRAN    4.6.2
+ ✅ PNETCDF           1.14.0
+ ✅ ZLIB              1.3.1
+ ✅ LIBPNG            1.6.47
+ ✅ JASPER            1.900.1
+------------------
+ ⏳ Downloading and building MPICH v4.3.0
+ ✅ MPICH was installed to: /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/mpich
+ ✅ mpirun points to: /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/mpich/bin/mpirun
+------------------
+ ⏳ Downloading and building zlib v1.3.1
+ ✅ Found zlib header in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/grib2/include
+------------------
+ ⏳ Downloading and building parallel HDF5 v1.14.6
+ ✅ Found HDF5 header in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/netcdf/include
+------------------
+ ⏳ Downloading and building libpng v1.6.47
+ ✅ Found libpng header in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/grib2/include
+------------------
+ ⏳ Downloading and building jasper v1.900.1
+ ✅ Found jasper header in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/grib2/include
+------------------
+ ⏳ Downloading and building PnetCDF v1.14.0
+ ✅ Found PnetCDF header in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/pnetcdf/include
+------------------
+ ⏳ Downloading and building netcdf-c v4.9.3
+ ⏳ Running netcdf-c test suite
+ ✅ Found netcdf-c header in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/netcdf/include
+------------------
+ ⏳ Downloading and building netcdf-fortran v4.6.2
+ ⏳ Running netcdf-fortran test suite
+ ✅ Found netcdf-fortran library in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/netcdf/lib
+------------------
+ ⏰ Library compilation took: 00:24:28
+------------------
+ ⚠️  Remember to run 'source ~/.zshrc' after compilation to activate the environment globally for future use
+------------------
+ 🔄 Running build_wrf_wps.sh
+ ⏳ Building WPS and WRF
+ ⚠️  Does NetCDF have parallel enabled?: yes
+------------------
+ ⏳ Cloning WRF repository
+ 🔄 Configuring WRF with model configuration: 35 and compiler option: 1
+ ⏳ Compiling WRF
+ ✅ WRF compiled successfully
+ ✅ WRF build complete
+------------------
+ ⏳ Cloning WPS repository
+ 🔄 Configuring WPS with configuration: 19
+ ⏳ Compiling WPS
+ ✅ WPS compiled successfully
+ ✅ WPS build complete
+------------------
+ 🔄 Running post-build tests for WRF/WPS executables
+------------------
+ ✅ WRF/main/wrf.exe exists and is built correctly
+ ✅ WRF/main/real.exe exists and is built correctly
+ ✅ WRF/main/ndown.exe exists and is built correctly
+ ✅ WRF/main/tc.exe exists and is built correctly
+ ✅ All WRF executable tests passed successfully
+------------------
+ ✅ WPS/geogrid.exe exists and is built correctly
+ ✅ WPS/ungrib.exe exists and is built correctly
+ ✅ WPS/metgrid.exe exists and is built correctly
+ ✅ All WRF/WPS executable tests passed successfully
+------------------
+ ⏰ WRF/WPS compilation took: 00:28:55
+------------------
+ 🔄 Running build_geog.sh
+ ⏳ Downloading geography data page from https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html
+ ✅ Found tarball URL: https://www2.mmm.ucar.edu/wrf/users/download/../../src/wps_files/geog_high_res_mandatory.tar.gz
+ ⏳ Downloading the geography tarball
+ ⏳ Extracting geog_high_res_mandatory.tar.gz to current directory: /Users/tybuckingham/Developer/compile_wrf_arm
+ 🔄 Renaming extracted directory 'WPS_GEOG' to 'geog'
+ ⏳ Removing downloaded tarball: geog_high_res_mandatory.tar.gz
+ ✅ Geography static data download and extraction complete
+------------------
+ ⏳ Updating WPS/namelist.wps with new geog_data_path: /Users/tybuckingham/Developer/compile_wrf_arm/geog
+------------------
+ ⏰ WRF geog data download took: 00:04:59
+------------------
+ ⏰ Full compilation took: 00:58:23
