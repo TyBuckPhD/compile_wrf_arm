@@ -76,3 +76,5 @@ The current repository has been tested on the following machines:
 | Hardware                    | Outcome |
 |-----------------------------|---------|
 | M2 Max Macbook Pro (12 CPU) |    ✅   | 
+| M1 Mac Mini (8 CPU) |   ⚠️    | 
+| M1 Macbook Air (8 CPU) |    ⚠️     | 
