@@ -31,9 +31,9 @@ Unfortunately, compiling WRF on ARM architecture is relatively complex compared 
 - **Centralized Logging:**    
     All scripts append to a shared compile.log file, so you have a complete record of the build process for troubleshooting and review.
 
-  ## Structure
+## Structure
 
-  ```plaintext
+```
 WRF-Build-Suite/
 ├── compile.sh
 └── build_scripts/
