@@ -1,2 +1,7 @@
 archive/
 .DS_Store
+
+WRF/
+WPS/
+geog/
+wrf_dependencies/
