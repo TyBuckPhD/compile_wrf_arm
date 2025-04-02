@@ -11,8 +11,8 @@ exec 3>> compile.log
 
 # Logging function: writes to compile.log and stdout.
 log() {
-  printf "%b" "$@" >&3
-  printf "%b" "$@"
+  printf "$@" >&3
+  printf "$@"
 }
 
 #############################
