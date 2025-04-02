@@ -15,6 +15,7 @@ The ever-increasing computational capabilities of local machines in recent years
 Unfortunately, compiling WRF on ARM architecture is relatively complex compared to x86, with specific compiler paths and niche flags required when configuring several libraries that are not well documented. In this repository, a standardised, modulised set of scripts are provided to allow for the simple configuration and compilation of the necessary compilers, libraries, and the model itself with a single execution.
 
 ## Installation 
+
 To git clone the repository:
 ```bash
 git clone https://github.com/TyBuckPhD/compile_wrf_arm
@@ -48,6 +49,12 @@ compile_wrf_arm/
 - **Geography Data Integration:**    
     Downloads, extracts, and integrates WRF geographic data, and updates configuration files (like namelist.wps) automatically.
 - **Centralized Logging:**    
-    All scripts append to a shared compile.log file, so you have a complete record of the build process for troubleshooting and review.
+    All scripts append to a shared compile.log file, so you have a complete record of the build process.
 
+## Usage
 
+For the complete pipeline, clone the repository to your directory of choice for WRF compilation and run:
+```bash
+./compile.sh
+```
+Which will execute the entire pipeline and log all output to compile.log
