@@ -73,5 +73,6 @@ Individual scripts can be run for the following:
 
 The current repository has been tested on the following machines:
 
-| Hardware                | Outcome                                  |
-| M2 Max Macbook Pro (12 CPU) | ✅ | 
+| Hardware                    | Outcome |
+|-----------------------------|---------|
+| M2 Max Macbook Pro (12 CPU) |    ✅   | 
