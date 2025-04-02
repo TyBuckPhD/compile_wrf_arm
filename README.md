@@ -15,6 +15,8 @@ The ever-increasing computational capabilities of local machines in recent years
 Unfortunately, compiling WRF on ARM architecture is relatively complex compared to x86, with specific compiler paths and niche flags required when configuring several libraries that are not well documented. In this repository, a standardised, modulised set of scripts are provided to allow for the simple configuration and compilation of the necessary compilers, libraries, and the model itself with a single execution.
 
 ## Structure
+
+The repository is structured as follows:
 ```
 compile_wrf_arm/
 ├── compile.sh
