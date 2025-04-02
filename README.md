@@ -92,7 +92,7 @@ With the following library versions:
 | LibPNG | 1.6.47 |
 | Jasper | 1.900.1|
 
-Keep in mind that although Jasper has much more recent releases (v4.x), API changes occurred after v2.0.33 that lead to compilation errors or unexpected behavior. For that reason, the Jasper compilation is hard-coded to version 1.900.1.
+Keep in mind that although Jasper has much more recent releases (v4.x), API changes occurred after v2.0.33 that lead to compilation errors and unexpected behavior when attempting to build WRF. For that reason, the Jasper compilation is hard-coded to version 1.900.1.
 
 Furthermore, build_libraries.sh builds PnetCDF and HDF5 in parallel, allowing for considerable speed-ups when writing WRF output. The scripts can be edited to not compile the PnetCDF library and drop parallel-writing functionality, but it is highly recommended for efficiency purposes. A series of tests were performed to ensure WRF was condfigured with PnetCDF as expected:
 
