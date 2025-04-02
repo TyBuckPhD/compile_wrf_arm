@@ -24,22 +24,22 @@ log "------------------\n"
 
 # Run check_gcc.sh
 log " 🔄 Running check_gcc.sh\n"
-./build_scripts/check_gcc.sh || { log "❌ check_gcc.sh failed\n"; exit 1; }
+./build_scripts/check_gcc.sh || { log " ❌ check_gcc.sh failed\n"; exit 1; }
 log "------------------\n"
 
 # Run build_libraries.sh
 log " 🔄 Running build_libraries.sh\n"
-./build_scripts/build_libraries.sh --dir "$(pwd)/wrf_dependencies" || { log "❌ build_libraries.sh failed\n"; exit 1; }
+./build_scripts/build_libraries.sh --dir "$(pwd)/wrf_dependencies" || { log " ❌ build_libraries.sh failed\n"; exit 1; }
 log "------------------\n"
 
 # Run build_wrf_wps.sh
 log " 🔄 Running build_wrf_wps.sh\n"
-./build_scripts/build_wrf_wps.sh --dir "$(pwd)/wrf_dependencies" || { log "❌ build_wrf_wps.sh failed\n"; exit 1; }
+./build_scripts/build_wrf_wps.sh --dir "$(pwd)/wrf_dependencies" || { log " ❌ build_wrf_wps.sh failed\n"; exit 1; }
 log "------------------\n"
 
 # Run build_geog.sh
 log " 🔄 Running build_geog.sh\n"
-./build_scripts/build_geog.sh || { log "❌ build_geog.sh failed\n"; exit 1; }
+./build_scripts/build_geog.sh || { log " ❌ build_geog.sh failed\n"; exit 1; }
 log "------------------\n"
 
 # Total time
