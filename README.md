@@ -4,6 +4,7 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Structure](#structure)
 - [Installation](#installation)
 - [Usage](#usage)
 
@@ -20,7 +21,7 @@ Unfortunately, compiling WRF on ARM architecture is relatively complex compared 
 - **Unified Pipeline:**    
     The compile.sh script runs all build scripts sequentially and ensuring the entire process is automated (recommended).
 - **Comprehensive Environment Checks:**    
-    The suite automatically verifies your build environment—ensuring the correct version of GCC/G++ is used, and that all necessary libraries are present.
+    The suite automatically verifies your build environment, ensuring the correct version of GCC/G++ is used, and that all necessary libraries are present.
 - **Automated Dependency Compilation:**    
     Builds and installs required libraries (such as NetCDF, MPI, etc.) with robust logging and error checking.
 - **Automated WRF/WPS Build:**    
@@ -29,3 +30,14 @@ Unfortunately, compiling WRF on ARM architecture is relatively complex compared 
     Downloads, extracts, and integrates WRF geographic data, and updates configuration files (like namelist.wps) automatically.
 - **Centralized Logging:**    
     All scripts append to a shared compile.log file, so you have a complete record of the build process for troubleshooting and review.
+
+  ## Structure
+
+  ```plaintext
+WRF-Build-Suite/
+├── compile.sh
+└── build_scripts/
+    ├── check_gcc.sh
+    ├── build_libraries.sh
+    ├── build_wrf_wps.sh
+    └── build_geog.sh
