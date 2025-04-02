@@ -1,1 +1,1 @@
-# compile_wrf_arm
+# Compiling WRF For Mac ARM Architecture
