@@ -73,11 +73,11 @@ Individual scripts can be run for the following:
 
 The current repository has been tested on the following machines:
 
-| Hardware                    | Outcome |
-|-----------------------------|---------|
-| M2 Max Macbook Pro (12 CPU) |    ✅   | 
-| M1 Mac Mini (8 CPU) |   🔄     | 
-| M1 Macbook Air (8 CPU) |    🔄      | 
+| Hardware                    | Outcome | Build Time |
+|-----------------------------|---------|------------|
+| M2 Max Macbook Pro (12 CPU) |    ✅   | |
+| M1 Mac Mini (8 CPU) |   🔄     | |
+| M1 Macbook Air (8 CPU) |    🔄      | | 
 
 With the following library versions:
 
