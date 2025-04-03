@@ -53,7 +53,7 @@ Detected Versions:
  ⏳ Running netcdf-fortran test suite
  ✅ Found netcdf-fortran library in /Users/tybuckingham/Developer/compile_wrf_arm/wrf_dependencies/netcdf/lib
 ------------------
- ⏰ Library compilation took: 00:24:28
+ ⏰ Library compilation took: 00:24:30
 ------------------
  ⚠️  Remember to run 'source ~/.zshrc' after compilation to activate the environment globally for future use
 ------------------
@@ -86,7 +86,7 @@ Detected Versions:
  ✅ WPS/metgrid.exe exists and is built correctly
  ✅ All WRF/WPS executable tests passed successfully
 ------------------
- ⏰ WRF/WPS compilation took: 00:28:55
+ ⏰ WRF/WPS compilation took: 00:29:21
 ------------------
  🔄 Running build_geog.sh
  ⏳ Downloading geography data page from https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html
@@ -99,6 +99,6 @@ Detected Versions:
 ------------------
  ⏳ Updating WPS/namelist.wps with new geog_data_path: /Users/tybuckingham/Developer/compile_wrf_arm/geog
 ------------------
- ⏰ WRF geog data download took: 00:04:59
+ ⏰ WRF geog data download took: 00:16:45
 ------------------
- ⏰ Full compilation took: 00:58:23
+ ⏰ Full compilation took: 01:10:36

@@ -103,7 +103,7 @@ export CPPFLAGS="${CPPFLAGS}"
 export CFLAGS="${CFLAGS}"
 export FCFLAGS="${FCFLAGS}"
 export FFLAGS="${FFLAGS}"
-export PATH="\${MPICH_DIR}/bin:\$PATH"
+export PATH="${MPICH_DIR}/bin:${PATH}"
 ## END WRF Environment Variables
 EOF
 )
