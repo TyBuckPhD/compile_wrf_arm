@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REGISTRY_FILE="WRF/Registry/registry.EM_COMMON"
+REGISTRY_FILE="Registry/registry.EM_COMMON"
 
 if [[ ! -f "$REGISTRY_FILE" ]]; then
-    echo "❌ ERROR: Cannot find $REGISTRY_FILE"
+    echo " ❌ ERROR: Cannot find $REGISTRY_FILE"
     exit 1
 fi
 
@@ -27,4 +27,4 @@ awk '
     { print }
 ' "$REGISTRY_FILE" > tmp && mv tmp "$REGISTRY_FILE"
 
-echo "✅ CTT successfully injected into $REGISTRY_FILE"
+echo " ✅ CTT successfully injected into $REGISTRY_FILE"
