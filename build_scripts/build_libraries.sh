@@ -2,7 +2,14 @@
 set -eo pipefail  # Exit immediately if any command fails
 setopt sh_word_split
 
-# Deactivate active conda environment if present - IMPORTANT FOR C COMPILERS!
+# IMPORTANT FOR C COMPILERS IF CONDA IS INSTALLED!
+# Would highly recommend leaving this section as is. Otherwise, YAML errors may occur when compiling MPICH.
+# Source conda's initialization script so that conda commands work properly.
+if [ -f "$(conda info --base)/etc/profile.d/conda.sh" ]; then
+  source "$(conda info --base)/etc/profile.d/conda.sh"
+fi
+
+# Deactivate active conda environment if present.
 if command -v conda &>/dev/null && [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
   echo "Deactivating conda environment: ${CONDA_DEFAULT_ENV}"
   conda deactivate
