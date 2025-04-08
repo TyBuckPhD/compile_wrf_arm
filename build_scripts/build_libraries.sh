@@ -2,6 +2,13 @@
 set -eo pipefail  # Exit immediately if any command fails
 setopt sh_word_split
 
+# Deactivate active conda environment if present - IMPORTANT FOR C COMPILERS!
+if command -v conda &>/dev/null && [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
+  echo "Deactivating conda environment: ${CONDA_DEFAULT_ENV}"
+  conda deactivate
+fi
+
+
 # Set timer
 start_time=$(date +%s)
 
