@@ -72,7 +72,7 @@ Individual scripts can be run for the following:
 | **check_gcc.sh**      | Verifies that the correct GCC/G++ is installed   | `/build_scripts/check_gcc.sh`   |
 | **build_libraries.sh**| Compiles and installs all required libraries   | `/build_scripts/build_libraries.sh` |
 | **build_wrf_wps.sh**  | Configures and builds WRF and WPS              | `/build_scripts/build_wrf_wps.sh`|
-| **build_geog.sh**     | Downloads and sets up geography data for WRF   | `/build_scripts/build_geog.sh`  |
+| **build_geog.sh**     | Downloads and sets up geography data for WRF and adds path to namelist.WPS   | `/build_scripts/build_geog.sh`  |
 | **wrf_registry.sh**   | Adds/removes variables to registry.EM_COMMON | `/patch/wrf_registry.sh` |
 
 ## Tests
