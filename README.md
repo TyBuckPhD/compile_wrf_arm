@@ -54,7 +54,7 @@ compile_wrf_arm/
     Downloads, extracts, and integrates WRF geographic data, and updates configuration files (like namelist.wps) automatically.
 - **Centralized Logging:**    
     All scripts append to a shared compile.log file, so you have a complete record of the build process.
-- **Registry Patching:**
+- **Registry Patching:**    
     Additional variables can be added to/removed from the Registry file prior to compilation to allow for additional WRF output flexibility.
 
 ## Usage
