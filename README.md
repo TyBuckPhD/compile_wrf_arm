@@ -77,13 +77,13 @@ Individual scripts can be run for the following:
 
 ## Tests
 
-The current repository has been tested on the following machines (build time does not include build_geog.sh as interent speeds vary. Keep in mind the WPS geography files are typically ~29G). The execution of compile_wrf.sh can take a long time owing to building all libraries from scratch:
+The current repository has been tested on the following machines (build time does not include build_geog.sh as internet speeds vary. Keep in mind the WPS geography files are typically ~29G). The execution of compile_wrf.sh can take a long time owing to building all libraries from scratch:
 
 | Hardware                    | Outcome | Build Time |
 |-----------------------------|---------|------------|
-| M2 Max Macbook Pro (12 CPU) |    ✅   | 00:32:46 |
-| M1 Mac Mini (8 CPU) |   🔄     | 01:17:17 |
-| M1 Macbook Air (8 CPU) |    🔄      | | 
+| M2 Max Macbook Pro (12 CPU) |    ✅   |  00:32:46  |
+| M1 Mac Mini (8 CPU)         |    ✅   |  01:17:17  |
+| M1 Macbook Air (8 CPU)      |    🔄   |            | 
 
 With the following library versions:
 
