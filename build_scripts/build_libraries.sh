@@ -11,7 +11,7 @@ fi
 
 # Deactivate active conda environment if present.
 if command -v conda &>/dev/null && [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
-  echo "Deactivating conda environment: ${CONDA_DEFAULT_ENV}"
+  echo " ⚠️  Deactivating conda environment: ${CONDA_DEFAULT_ENV}"
   conda deactivate
 fi
 
@@ -36,7 +36,7 @@ done
 
 # Check if DIR was provided
 if [[ -z "$DIR" ]]; then
-  echo "Error: Installation directory not specified. Please provide the --dir flag." >&2
+  echo " ❌ Error: Installation directory not specified. Please provide the --dir flag." >&2
   exit 1
 fi
 
@@ -222,7 +222,7 @@ run_cmd ./configure --prefix="$MPICH_DIR" \
             CC="${CC}" \
             FC="${FC}" \
             CXX="${CXX}" \
-            --disable-fortran \
+            --enable-fortran \
             --enable-shared
 run_cmd make -j "$WRF_DEP_JOBS"
 run_cmd make install
@@ -404,7 +404,7 @@ log " ⏳ Downloading and building netcdf-c v${NETCDF_C_VERSION}\n"
 
 # Use MPI wrappers for netcdf-c when enabling parallel netCDF support
 export CC=mpicc
-export CXX=mpicxxs
+export CXX=mpicxx
 export FC=mpifort
 export F77=mpifort
 

@@ -1,0 +1,16 @@
+
+Copying namelist.wps to /Users/tybuckingham/Developer/compile_wrf_arm/WPS
+
+Linking vtable for ERA5 data in /Users/tybuckingham/Developer/compile_wrf_arm/WPS
+
+Running link_grib with data directory /Users/tybuckingham/Developer/compile_wrf_arm/tests/data
+
+Running ungrib.exe
+
+Running geogrid.exe
+
+Running metgrid.exe
+
+WPS workflow completed.
+
+⏰ Total execution time: 00:00:06
