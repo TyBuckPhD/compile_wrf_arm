@@ -7,3 +7,4 @@ geog/
 wrf_dependencies/
 compile.log
 tests/test_executables.log
+tests/output/*

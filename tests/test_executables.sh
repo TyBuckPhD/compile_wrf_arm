@@ -91,7 +91,7 @@ log " ⏳ Running real.exe\n"
 run_cmd mpirun -np 4 ./real.exe || { log " ❌ real.exe failed. Perhaps an issue with the executable or namelist.input?\n"; exit 1; }
 
 log " ⏳ Running wrf.exe\n"
-run_cmd mpirun -np 4 ./wrf.exe || { log " ❌ wrf.exe failed. Perhaps an issue with the executable or hardware (e.g., CPU number)?\n"; exit 1; }
+run_cmd mpirun -np 8 ./wrf.exe || { log " ❌ wrf.exe failed. Perhaps an issue with the executable or hardware (e.g., CPU number)?\n"; exit 1; }
 
 log " ✅ WRF pipeline successfully completed\n"
 log " ✅ Output data can be found in ${OUTPUT_DIR}\n"
