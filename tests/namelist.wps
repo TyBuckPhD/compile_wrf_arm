@@ -24,7 +24,7 @@
  stand_lon         =   -90.0,
  pole_lat          =   90.0,
  pole_lon          =   0.0,
- geog_data_path = '/Users/tybuckingham/Developer/compile_wrf_arm/geog'
+ geog_data_path = ''
  /
 
 &ungrib

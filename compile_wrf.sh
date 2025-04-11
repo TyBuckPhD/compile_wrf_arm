@@ -38,8 +38,8 @@ log " 🔄 Running build_wrf_wps.sh\n"
 log "------------------\n"
 
 # Run build_geog.sh
-# log " 🔄 Running build_geog.sh\n"
-# ./build_scripts/build_geog.sh || { log " ❌ build_geog.sh failed\n"; exit 1; }
+log " 🔄 Running build_geog.sh\n"
+./build_scripts/build_geog.sh || { log " ❌ build_geog.sh failed\n"; exit 1; }
 log "------------------\n"
 
 # Total time
