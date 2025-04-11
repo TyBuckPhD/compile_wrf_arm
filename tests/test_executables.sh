@@ -36,6 +36,7 @@ REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 # Directory containing compiled WRF executables and related subdirectories
 WPS_DIR="${REPO_ROOT}/WPS"
 WRF_RUN_DIR="${REPO_ROOT}/WRF/run"
+GEOG_DIR="${REPO_ROOT}/geog"
 DATA_DIR="${SCRIPT_DIR}/data"
 OUTPUT_DIR="${SCRIPT_DIR}/output"
 
