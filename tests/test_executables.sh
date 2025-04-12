@@ -40,6 +40,8 @@ GEOG_DIR="${REPO_ROOT}/geog"
 DATA_DIR="${SCRIPT_DIR}/data"
 OUTPUT_DIR="${SCRIPT_DIR}/output"
 
+mkdir -p $OUTPUT_DIR
+
 ###########################
 # Update namelist entries #
 ###########################

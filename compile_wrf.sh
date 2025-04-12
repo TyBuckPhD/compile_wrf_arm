@@ -27,9 +27,20 @@ log " 🔄 Running check_gcc.sh\n"
 ./build_scripts/check_gcc.sh || { log " ❌ check_gcc.sh failed\n"; exit 1; }
 log "------------------\n"
 
+# Run build_env_file.sh
+log " 🔄 Running build_env_file.sh\n"
+./build_scripts/build_env_file.sh --dir "$(pwd)/wrf_dependencies" || { log " ❌ build_env_file.sh failed\n"; exit 1; }
+log "------------------\n"
+
+# Make sure all environment paramaters are passed to the pipeline
+source "$(pwd)/wrf_dependencies/wrf_environment.sh"
+log " 🔄 Testing environment\n"
+log " 📦 NETCDF: $NETCDF \n"
+log "------------------\n"
+
 # Run build_libraries.sh
 log " 🔄 Running build_libraries.sh\n"
-./build_scripts/build_libraries.sh --dir "$(pwd)/wrf_dependencies" || { log " ❌ build_libraries.sh failed\n"; exit 1; }
+./build_scripts/build_libraries.sh || { log " ❌ build_libraries.sh failed\n"; exit 1; }
 log "------------------\n"
 
 # Run build_wrf_wps.sh

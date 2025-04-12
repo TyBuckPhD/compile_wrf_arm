@@ -11,36 +11,12 @@ fi
 
 # Deactivate active conda environment if present.
 if command -v conda &>/dev/null && [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
-  echo " ⚠️  Deactivating conda environment: ${CONDA_DEFAULT_ENV}"
+  echo " ⚠️ Deactivating conda environment: ${CONDA_DEFAULT_ENV}"
   conda deactivate
 fi
 
-
 # Set timer
 start_time=$(date +%s)
-
-# Parse command-line arguments for --dir flag
-DIR=""
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    --dir)
-      DIR="$2"
-      shift 2
-      ;;
-    *)
-      echo "Unknown option: $1" >&2
-      exit 1
-      ;;
-  esac
-done
-
-# Check if DIR was provided
-if [[ -z "$DIR" ]]; then
-  echo " ❌ Error: Installation directory not specified. Please provide the --dir flag." >&2
-  exit 1
-fi
-
-mkdir -p "$DIR"
 
 ##################
 # Set up logging #
@@ -64,78 +40,6 @@ run_cmd() {
   fi
 }
 
-log " ⏳ Setting Environment and Building WRF Libraries\n"
-
-######################################
-# Define Directories and Environment #
-######################################
-export NETCDF="$DIR/netcdf"
-export GRIB2="$DIR/grib2"
-export PNETCDF="$DIR/pnetcdf"
-export MPICH_DIR="$DIR/mpich"
-
-# Create necessary directories
-mkdir -p "$NETCDF/include" "$NETCDF/lib"
-mkdir -p "$GRIB2"
-mkdir -p "$PNETCDF"
-mkdir -p "$MPICH_DIR"
-
-# Number of parallel jobs for builds
-export WRF_DEP_JOBS=16
-
-# Fortran compiler flags: disable warnings, allow argument mismatch, and optimize with O2
-export CFLAGS="-O2"
-export FCFLAGS="-w -fallow-argument-mismatch -O2"
-export FFLAGS="-w -fallow-argument-mismatch -O2"
-
-# Jasper settings for WRF
-export JASPERLIB="$GRIB2/lib"
-export JASPERINC="$GRIB2/include"
-
-# Linker and preprocessor flags
-export LDFLAGS="-L${NETCDF}/lib"
-export CPPFLAGS="-I${NETCDF}/include"
-
-########################################
-# Update ~/.zshrc with WRF Environment #
-########################################
-# Define a unique marker for the WRF environment block
-WRF_MARKER="## BEGIN WRF Environment Variables"
-
-# Build the environment block using the defined exports.
-WRF_ENV_BLOCK=$(cat <<EOF
-## BEGIN WRF Environment Variables
-export DIR="${DIR}"
-export NETCDF="${NETCDF}"
-export GRIB2="${GRIB2}"
-export PNETCDF="${PNETCDF}"
-export MPICH_DIR="${MPICH_DIR}"
-export JASPERLIB="${JASPERLIB}"
-export JASPERINC="${JASPERINC}"
-export LDFLAGS="${LDFLAGS}"
-export CPPFLAGS="${CPPFLAGS}"
-export CFLAGS="${CFLAGS}"
-export FCFLAGS="${FCFLAGS}"
-export FFLAGS="${FFLAGS}"
-export PATH="${MPICH_DIR}/bin:${PATH}"
-## END WRF Environment Variables
-EOF
-)
-
-log "------------------\n"
-ZSHRC_FILE="$HOME/.zshrc"
-log " ⏳ Adding environment to $ZSHRC_FILE\n"
-
-if ! grep -q "$WRF_MARKER" "$ZSHRC_FILE"; then
-  log " ✅ WRF environment block not found in $ZSHRC_FILE\n"
-  # Append the environment block directly to .zshrc using printf
-  printf "\n%s\n" "$WRF_ENV_BLOCK" >> "$ZSHRC_FILE"
-  log " ✅ WRF environment variables added to $ZSHRC_FILE\n"
-else
-  log " ⚠️  WRF environment block already exists in $ZSHRC_FILE - skipping\n"
-fi
-log "------------------\n"
-
 #########################################
 # Detect Latest Stable Library Versions #
 #########################################
@@ -154,7 +58,7 @@ get_latest_github_tag() {
         tail -n 1 || true
 }
 
-echo "Fetching latest library versions"
+echo " 🔄 Fetching latest library versions"
 
 #####################################
 # Define libraries and tag prefixes #
@@ -187,7 +91,7 @@ VERSIONS[JASPER]="1.900.1"
 ##################################
 # Print detected versions safely #
 ##################################
-log "Detected Versions:\n"
+log " 📦 Detected Versions:\n"
 for lib in MPICH HDF5 NETCDF_C NETCDF_FORTRAN PNETCDF ZLIB LIBPNG JASPER; do
     version=" ❌ <not found>"
     if [[ -n "${VERSIONS[$lib]}" ]]; then
@@ -493,5 +397,3 @@ minutes=$(( (elapsed % 3600) / 60 ))
 seconds=$(( elapsed % 60 ))
 
 log " ⏰ Library compilation took: %02d:%02d:%02d\n" "$hours" "$minutes" "$seconds"
-log "------------------\n"
-log " ⚠️  Remember to run 'source ~/.zshrc' after compilation to activate the environment globally for future use\n"

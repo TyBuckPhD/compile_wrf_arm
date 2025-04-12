@@ -26,7 +26,7 @@ run_cmd() {
 # Check and configure GCC
 ##########################
 
-log "🔍 Checking for Homebrew GCC and G++...\n"
+log " 🔍 Checking for Homebrew GCC and G++...\n"
 
 BREW_GCC_PREFIX=$(brew --prefix gcc)
 GCC_BIN_DIR="${BREW_GCC_PREFIX}/bin"
@@ -53,7 +53,7 @@ export PATH="${GCC_WRAPPER_DIR}:${PATH}"
 # Confirm configuration
 #############################
 
-log "🔧 Overridden gcc and g++ using symlink wrappers\n"
+log " 🔧 Overridden gcc and g++ using symlink wrappers\n"
 log " 📦 which gcc: $(which gcc)\n"
 log " 📦 which g++: $(which g++)\n"
 log " 🧪 gcc version: $(gcc --version | head -n 1)\n"
