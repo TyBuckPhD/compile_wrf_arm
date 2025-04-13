@@ -35,7 +35,12 @@ compile_wrf_arm/
     └── build_geog.sh
 └── patch/
     ├── wrf_registry.sh
-
+└── tests/
+    └── data
+        └── era5_*.grib
+    ├── namelist.input
+    ├── namelist.wps
+    └── test_executables.sh
 ```
 
 ## Features
@@ -56,6 +61,8 @@ compile_wrf_arm/
     All scripts append to a shared compile.log file, so you have a complete record of the build process.
 - **Registry Patching:**    
     Additional variables can be added to/removed from the Registry file prior to compilation to allow for additional WRF output flexibility.
+- **Small WRF test:**    
+    Six hours of ERA5 data (and relevant namelists) are provided for a quick post-compilation test. A full WRF run, checking all relevant executables, can be executed using test_executables.sh.
 
 ## Usage
 
