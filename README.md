@@ -90,7 +90,7 @@ The current repository has been tested on the following machines (build time doe
 |-----------------------------|---------|------------|
 | M2 Max Macbook Pro (12 CPU) |    ✅   |  00:56:46  |
 | M1 Mac Mini (8 CPU)         |    ✅   |  01:17:17  |
-| M1 Macbook Air (8 CPU)      |    🔄   |            | 
+| M1 Macbook Air (8 CPU)      |    ✅   |  01:12:14  | 
 
 With the following library versions:
 
