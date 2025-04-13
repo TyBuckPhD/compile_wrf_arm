@@ -72,9 +72,9 @@ export FFLAGS="-w -fallow-argument-mismatch -O2"
 export LDFLAGS="-L${NETCDF}/lib"
 export CPPFLAGS="-I${NETCDF}/include"
 
-export CC="$MPICH_DIR/bin/mpicc"
-export CXX="$MPICH_DIR/bin/mpicxx"
-export FC="$MPICH_DIR/bin/mpifort"
+export CC="${MPICH_DIR}/bin/mpicc"
+export CXX="${MPICH_DIR}/bin/mpicxx"
+export FC="${MPICH_DIR}/bin/mpifort"
 
 export JASPERLIB="${GRIB2}/lib"
 export JASPERINC="${GRIB2}/include"
