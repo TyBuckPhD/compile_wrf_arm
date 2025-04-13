@@ -50,27 +50,12 @@ run_cmd() {
 
 log " ⏳ Building WPS and WRF\n"
 
-#########################################
-# Set Environment Variables for WRF/WPS #
-#########################################
-# Relevant PnetCDF exports
-export HDF5="$DIR/netcdf"
-export PHDF5="$DIR/netcdf"
-export PNETCDF="$DIR/pnetcdf"
+#################################
+# Check for parallel capability #
+#################################
 
-# Relevant MPI exports
-export CC="$MPICH_DIR/bin/mpicc"
-export CXX="$MPICH_DIR/bin/mpicxx"
-export FC="$MPICH_DIR/bin/mpifort"
-
-# Update PATH and library search path so MPI wrappers and netCDF utilities are found
-export PATH="$NETCDF/bin:$PATH"
-export PATH="$MPICH_DIR/bin:$NETCDF/bin:$PATH"
-export DYLD_LIBRARY_PATH="$MPICH_DIR/lib:$NETCDF/lib:$PNETCDF/lib:$GRIB2/lib:${DYLD_LIBRARY_PATH:-}"
-
-# Capture the output of the nc-config command.
 nc_output=$("$NETCDF/bin/nc-config" --has-pnetcdf)
-log " ⚠️  Does NetCDF have parallel enabled?: ${nc_output}\n"
+log " ⚠️ Does NetCDF have parallel enabled?: ${nc_output}\n"
 log "------------------\n"
 
 # Check if the output is "no", and exit if so.
