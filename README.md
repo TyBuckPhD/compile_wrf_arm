@@ -83,6 +83,26 @@ Individual scripts can be run for the following:
 | **wrf_registry.sh**   | Adds/removes variables to registry.EM_COMMON | `/patch/wrf_registry.sh` |
 | **test_executables.sh** | Runs a short WRF simulation to test executables | `/tests/test_executables.sh` |
 
+After compilation, an alias is added to the .zshrc file to allow for the correct MPIRUN to be located when running WRF:
+
+```bash
+alias wrfenv='source "/path/to/environment/file/wrf_environment.sh"'
+```
+
+To run WRF after compilation, either refresh the terminal instance by opening a new session, or source the .zshrc file. From here, simply activate the environment using 
+
+```bash
+wrfenv
+```
+
+then which mpirun will return 
+
+```bash
+/path/tp/mpich/dir/mpirun
+```
+
+allowing WRF to be run using mpirun.
+
 ## Tests
 
 The current repository has been tested on the following machines (build time does not include build_geog.sh as internet speeds vary. Keep in mind the WPS geography files are typically ~29G). The execution of compile_wrf.sh can take a long time owing to building all libraries from scratch:
