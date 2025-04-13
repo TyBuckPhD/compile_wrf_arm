@@ -81,6 +81,7 @@ Individual scripts can be run for the following:
 | **build_wrf_wps.sh**  | Configures and builds WRF and WPS              | `/build_scripts/build_wrf_wps.sh`|
 | **build_geog.sh**     | Downloads and sets up geography data for WRF and adds path to namelist.WPS   | `/build_scripts/build_geog.sh`  |
 | **wrf_registry.sh**   | Adds/removes variables to registry.EM_COMMON | `/patch/wrf_registry.sh` |
+| **test_executables.sh** | Runs a short WRF simulation to test executables | `/tests/test_executables.sh` |
 
 ## Tests
 
