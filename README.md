@@ -143,3 +143,5 @@ For M1 Macbook Air (8 CPU):
 | io_form=11 (parallel) | 0.08s |
 
 - Writing decrease factor: 7.3x
+
+File writing times are taken as an average of the seven produced during the test. Indeed, file writing times are highly variable and dependent on domain number, domain sizes, resolutions (both vertical and horizontal), etc. Timings given here are representative of the machines tested on and may vary even if the same hardware is used (e.g., there were considerable differences between the M1 Mac Mini and M1 Macbook air, even though they have the same number of CPUs etc.).
