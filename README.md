@@ -50,7 +50,7 @@ compile_wrf_arm/
 - **Unified Pipeline:**    
     The compile.sh script runs all build scripts sequentially and ensuring the entire process is automated (recommended).
 - **Comprehensive Environment Checks:**    
-    The suite automatically verifies your build environment, ensuring the correct version of GCC/G++ is used, and that all necessary libraries are present.
+    The suite automatically verifies your build environment, ensuring the correct version of GCC/G++ is used, and that all necessary libraries are present. Furthermore, a compartmentalised environment block is generated outside of the ~/.zshrc file to keep the compilation contained.
 - **Automated Dependency Compilation:**    
     Builds and installs required most up-to-date libraries (such as NetCDF, MPI, etc.) with robust logging and error checking.
 - **Automated WRF/WPS Build:**    
