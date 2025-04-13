@@ -83,7 +83,7 @@ Individual scripts can be run for the following:
 | **wrf_registry.sh**   | Adds/removes variables to registry.EM_COMMON | `/patch/wrf_registry.sh` |
 | **test_executables.sh** | Runs a short WRF simulation to test executables | `/tests/test_executables.sh` |
 
-After compilation, an alias is added to the .zshrc file to allow for the correct MPIRUN to be located when running WRF:
+After compilation, an alias is added to the .zshrc file to allow for the correct mpirun to be located when running WRF:
 
 ```bash
 alias wrfenv='source "/path/to/environment/file/wrf_environment.sh"'
