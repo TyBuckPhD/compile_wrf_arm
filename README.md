@@ -109,7 +109,7 @@ Keep in mind that although Jasper has much more recent releases (v4.x), API chan
 
 ## Tests
 
-Post compilation, tests/test_executables.sh should be executed to determine whether all executables have been built correctly and are executable. A small, six hour WRF run for 01 JAN 2020 00-06h is computed with a horizontal resolution of ~20 km. The WRF run test saves all NetCDF files to output, a directory automatically generated inside tests when the script is executed. Timing for each tests (with io_form=11) are as follows:
+Post compilation, tests/test_executables.sh should be executed to determine whether all executables have been built correctly and are executable. A small, six hour WRF run for 01 JAN 2020 00-06h is computed with a horizontal resolution of ~20 km. The WRF run test saves all NetCDF files to output, a directory automatically generated inside tests when the script is executed. Timing for each tests with parallel NetCDF writing are as follows:
 
 | Hardware                    | Run Time |
 |-----------------------------|----------|
@@ -119,16 +119,16 @@ Post compilation, tests/test_executables.sh should be executed to determine whet
 
 build_libraries.sh builds PnetCDF and HDF5 in parallel, allowing for considerable speed-ups when writing WRF output. The scripts can be edited to not compile the PnetCDF library and drop parallel-writing functionality, but it is highly recommended for efficiency purposes. test_executables.sh was performed with parallel writing capabilities and without to determine efficiency increases and to ensure WRF was condfigured with PnetCDF as expected:
 
-* For M2 Max Macbook Pro (12 CPU):
+For M2 Max Macbook Pro (12 CPU):
 | Writing | Writing Speed |
 |------------------|---------------|
 | io_form=2 (not parallel) | 0.33s |
 | io_form=11 (parallel) | 0.05s |
-* Writing decrease factor: 6.6x
+Writing decrease factor: 6.6x
 
-* For M1 Mac Mini (8 CPU):
+For M1 Mac Mini (8 CPU):
 | Writing | Writing Speed |
 |------------------|---------------|
 | io_form=2 (not parallel) | 0.853s |
 | io_form=11 (parallel) | 0.149s |
-* Writing decrease factor: 5.7x
+Writing decrease factor: 5.7x
