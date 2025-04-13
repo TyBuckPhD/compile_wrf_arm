@@ -36,7 +36,7 @@ compile_wrf_arm/
 └── patch/
     ├── wrf_registry.sh
 └── tests/
-    └── data
+    └── data/
         └── era5_*.grib
     ├── namelist.input
     ├── namelist.wps
@@ -88,7 +88,7 @@ The current repository has been tested on the following machines (build time doe
 
 | Hardware                    | Outcome | Build Time |
 |-----------------------------|---------|------------|
-| M2 Max Macbook Pro (12 CPU) |    ✅   |  00:32:46  |
+| M2 Max Macbook Pro (12 CPU) |    ✅   |  00:56:46  |
 | M1 Mac Mini (8 CPU)         |    ✅   |  01:17:17  |
 | M1 Macbook Air (8 CPU)      |    🔄   |            | 
 
@@ -114,4 +114,13 @@ Furthermore, build_libraries.sh builds PnetCDF and HDF5 in parallel, allowing fo
 | io_form=2 (not parallel) | |
 | io_form=11 (parallel) | |
 
+## Tests
+
+Post compilation, tests/test_executables.sh should be executed to determine whether all executables have been built correctly and are executable. A small, six hour WRF run for 01 JAN 2020 00-06h is computed with a horizontal resolution of ~20 km. The WRF run test saves all NetCDF files to output, a directory automatically generated inside tests when the script is executed. Timing for each tests (with io_form=11) are as follows:
+
+| Hardware                    | Run Time |
+|-----------------------------|----------|
+| M2 Max Macbook Pro (12 CPU) | 00:01:06 |
+| M1 Mac Mini (8 CPU)         | 00:02:25 |
+| M1 Macbook Air (8 CPU)      |          |
 
