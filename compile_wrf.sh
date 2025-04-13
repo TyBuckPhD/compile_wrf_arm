@@ -53,6 +53,19 @@ log " 🔄 Running build_geog.sh\n"
 ./build_scripts/build_geog.sh || { log " ❌ build_geog.sh failed\n"; exit 1; }
 log "------------------\n"
 
+# Add WRF environment alias so mpirun etc. can be used later when required
+ZSHRC="$HOME/.zshrc"
+ALIAS_DEF="alias wrfenv='source \"$(pwd)/wrf_dependencies/wrf_environment.sh\"'"
+
+if ! grep -Fxq "$ALIAS_DEF" "$ZSHRC"; then
+  echo "\n# Added by WRF compilation pipeline" >> "$ZSHRC"
+  echo "$ALIAS_DEF" >> "$ZSHRC"
+  log " ✅ Alias 'wrfenv' added to $ZSHRC\n"
+else
+  log " ℹ️ Alias 'wrfenv' already present in $ZSHRC, nothing needed to be done\n"
+fi
+log "------------------\n"
+
 # Total time
 end_time=$(date +%s)
 elapsed=$(( end_time - start_time ))
