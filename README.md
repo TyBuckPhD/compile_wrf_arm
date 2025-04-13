@@ -134,3 +134,11 @@ For M1 Mac Mini (8 CPU):
 | io_form=11 (parallel) | 0.149s |
 
 - Writing decrease factor: 5.7x
+  
+For M1 Macbook Air (8 CPU):
+| NetCDF Writing | Writing Speed |
+|------------------|---------------|
+| io_form=2 (not parallel) |  |
+| io_form=11 (parallel) |  |
+
+- Writing decrease factor: 
