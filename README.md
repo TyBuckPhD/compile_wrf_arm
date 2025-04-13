@@ -116,7 +116,7 @@ Post compilation, tests/test_executables.sh should be executed to determine whet
 |-----------------------------|----------|
 | M2 Max Macbook Pro (12 CPU) | 00:01:06 |
 | M1 Mac Mini (8 CPU)         | 00:02:25 |
-| M1 Macbook Air (8 CPU)      |          |
+| M1 Macbook Air (8 CPU)      | 00:02:16 |
 
 build_libraries.sh builds PnetCDF and HDF5 in parallel, allowing for considerable speed-ups when writing WRF output. The scripts can be edited to not compile the PnetCDF library and drop parallel-writing functionality, but it is highly recommended for efficiency purposes. test_executables.sh was performed with parallel writing capabilities and without to determine efficiency increases and to ensure WRF was condfigured with PnetCDF as expected:
 
@@ -139,7 +139,7 @@ For M1 Mac Mini (8 CPU):
 For M1 Macbook Air (8 CPU):
 | NetCDF Writing | Writing Speed |
 |------------------|---------------|
-| io_form=2 (not parallel) |  |
-| io_form=11 (parallel) |  |
+| io_form=2 (not parallel) | 0.58s |
+| io_form=11 (parallel) | 0.08s |
 
-- Writing decrease factor: 
+- Writing decrease factor: 7.3x
