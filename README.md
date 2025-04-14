@@ -98,7 +98,7 @@ wrfenv
 then which mpirun will return 
 
 ```bash
-/path/tp/mpich/dir/mpirun
+/path/to/mpich/dir/mpirun
 ```
 
 allowing WRF to be run using mpirun.
