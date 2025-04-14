@@ -34,7 +34,7 @@ compile_wrf_arm/
     ├── build_wrf_wps.sh
     └── build_geog.sh
 └── patch/
-    ├── wrf_registry.sh
+    └── wrf_registry.sh
 └── tests/
     └── data/
         └── era5_*.grib
