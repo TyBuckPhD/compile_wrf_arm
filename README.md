@@ -4,6 +4,7 @@
 
 - [Introduction](#introduction)
 - [Installation](#installation)
+- [Pre-Build](#pre-build)
 - [Structure](#structure)
 - [Features](#features)
 - [Usage](#usage)
@@ -21,6 +22,10 @@ To git clone the repository:
 ```bash
 git clone https://github.com/TyBuckPhD/compile_wrf_arm
 ```
+
+## Pre-Build
+
+Although part of the pipeline automatically deactivates any conda environments presents, it is **HIGHLY RECOMMENDED** to run conda deactivate if you typically use conda environments **BEFORE** running ./compile_wrf.sh. If you don't, issues with compilers can occur even if all the libraries build correctly.
 
 ## Structure
 
