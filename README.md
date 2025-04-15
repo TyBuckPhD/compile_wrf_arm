@@ -39,8 +39,8 @@ compile_wrf_arm/
 |   ├── build_wrf_wps.sh
 |   └── build_geog.sh
 ├── tests/
-|   └── data/
-|       └── era5_*.grib
+|   ├── data/
+|   |   └── era5_*.grib
 |   ├── namelist.input
 |   ├── namelist.wps
 |   └── test_executables.sh
