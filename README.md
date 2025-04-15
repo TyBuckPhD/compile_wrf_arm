@@ -33,17 +33,17 @@ The repository is structured as follows:
 ```
 compile_wrf_arm/
 ├── compile.sh
-└── build_scripts/
-    ├── check_gcc.sh
-    ├── build_libraries.sh
-    ├── build_wrf_wps.sh
-    └── build_geog.sh
-└── tests/
-    └── data/
-        └── era5_*.grib
-    ├── namelist.input
-    ├── namelist.wps
-    └── test_executables.sh
+├── build_scripts/
+|   ├── check_gcc.sh
+|   ├── build_libraries.sh
+|   ├── build_wrf_wps.sh
+|   └── build_geog.sh
+├── tests/
+|   └── data/
+|       └── era5_*.grib
+|   ├── namelist.input
+|   ├── namelist.wps
+|   └── test_executables.sh
 ```
 
 ## Features
