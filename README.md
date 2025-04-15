@@ -38,8 +38,6 @@ compile_wrf_arm/
     ├── build_libraries.sh
     ├── build_wrf_wps.sh
     └── build_geog.sh
-└── patch/
-    └── wrf_registry.sh
 └── tests/
     └── data/
         └── era5_*.grib
@@ -64,8 +62,6 @@ compile_wrf_arm/
     Downloads, extracts, and integrates WRF geographic data, and updates configuration files (like namelist.wps) automatically.
 - **Centralized Logging:**    
     All scripts append to a shared compile.log file, so you have a complete record of the build process.
-- **Registry Patching:**    
-    Additional variables can be added to/removed from the Registry file prior to compilation to allow for additional WRF output flexibility.
 - **Small WRF test:**    
     Six hours of ERA5 data (and relevant namelists) are provided for a quick post-compilation test. A full WRF run, checking all relevant executables, can be executed using test_executables.sh.
 
@@ -85,7 +81,6 @@ Individual scripts can be run for the following:
 | **build_libraries.sh**| Compiles and installs all required libraries   | `/build_scripts/build_libraries.sh` |
 | **build_wrf_wps.sh**  | Configures and builds WRF and WPS              | `/build_scripts/build_wrf_wps.sh`|
 | **build_geog.sh**     | Downloads and sets up geography data for WRF and adds path to namelist.WPS   | `/build_scripts/build_geog.sh`  |
-| **wrf_registry.sh**   | Adds/removes variables to registry.EM_COMMON | `/patch/wrf_registry.sh` |
 | **test_executables.sh** | Runs a short WRF simulation to test executables | `/tests/test_executables.sh` |
 
 After compilation, an alias is added to the .zshrc file to allow for the correct mpirun to be located when running WRF:
