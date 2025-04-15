@@ -74,9 +74,6 @@ fi
 
 cd WRF || { log " ❌ Cannot enter WRF directory\n"; exit 1; }
 
-# Inject registry variables before configuration
-$REPO_DIR/patch/wrf_registry.sh || { log " ❌ Failed to inject CTT into Registry\n"; exit 1; }
-
 model_config=35
 compiler_opt=1
 log " 🔄 Configuring WRF with model configuration: $model_config and compiler option: $compiler_opt\n"
